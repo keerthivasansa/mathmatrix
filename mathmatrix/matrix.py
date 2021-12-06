@@ -68,6 +68,16 @@ class Matrix:
     def __eq__(self, __o: object) -> bool:
         if __o == 0:
             return sum([sum(x) for x in self.__values]) == 0
+        elif type(__o) == Matrix:
+            if self.m != __o.m or self.n != __o.n:
+                return False
+            for i in range(self.m):
+                for j in range(self.n):
+                    if self.__values[i][j] != __o[i][j]:
+                        return False
+            return True
+        else:
+            raise ValueError('Equality can only be checked between matrices or between a matrix and a 0')
 
     def __add__(self, other):
         t = type(other)
