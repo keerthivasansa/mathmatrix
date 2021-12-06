@@ -130,6 +130,7 @@ print(matrix.transpose())
 
 Adjoint of a matrix is calculated as the transpose of cofactor matrix of a Matrix
 It can be calculated using the `adjoint()` method
+
 ```pyhton 
 print(matrix.adjoint())
 # [ -3, 6, -3
@@ -139,15 +140,18 @@ print(matrix.adjoint())
 
 ### Determinant of a Matrix
 `Matrix.determinant() -> int | float`
-```pyhton 
+
+```python 
 print(matrix.determinant())
 # 0
 ```
 
 ### Inverse of a Matrix
-Note: Inverse only exists for non-singular matrices ( Determinant of the Matrix should not be zero ) 
 `Matrix.inverse() -> Matrix`
-```pyhton 
+
+Inverse of a matrix only exists for non-singular matrices ( Determinant of the Matrix should not be zero )
+
+```python 
 print(matrix.determinant())
 # 0
 # Since determinant is zero, if we try to calculate Inverse it will throw the error:
@@ -156,6 +160,7 @@ print(matrix.determinant())
 
 ### Cofactor of an element
 `Matrix.cofactor(m:int, n:int) -> int | float`
+
 Specify the position of the desired element in row number (m) and column number (n) to calculate it's corresponding cofactor
 
 ### Chaining functions
@@ -170,7 +175,9 @@ are all completely valid
 ## Additional Functions
 
 ### Generating a zero matrix
+
 `gen_zero_matrix(m:int, n:int) -> Matrix`
+
 You can use the `gen_zero_matrix` function to create a zero matrix of a given order
 For example,
 ```python
@@ -185,9 +192,12 @@ print(zero3 == 0)
 ```
 
 ### Generating an identity matrix
+
 `gen_zero_matrix(m:int, n:int) -> Matrix`
+
 You can use the `gen_zero_matrix` function to create a zero matrix of a given order
 For example,
+
 ```python
 from mathmatrix import gen_zero_matrix, Matrix
 zero3 = gen_zero_matrix(3,3) 
@@ -198,8 +208,10 @@ print(zero3)
 print(zero3 == 0)
 # True
 ```
+
 Note:
 For any Matrix `matrix`,
+
 ```python
 print(matrix * matrix.inverse() == gen_identity_matrix(matrix.m, matrix.n))
 # Always true (Inverse cannot be calculated for singular matrices so error is thrown in that case)
