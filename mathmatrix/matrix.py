@@ -183,4 +183,4 @@ def gen_identity_matrix(m: int, n: int) -> Matrix:
     '''
     Generats an idenitity matrix of order m x n
     '''
-    return Matrix(m, n, [[1 if (i+j) % 2 == 0 else 0 for j in range(n)] for i in range(m)], False)
+    return Matrix(m, n, [[1 if i == j else 0 for j in range(n)] for i in range(m)], False)
