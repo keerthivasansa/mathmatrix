@@ -80,7 +80,7 @@ The order of the resultant Matrix will be `m x l`
 
 Example:
 ```python
-# m x n * n x l : Gives l x m
+# m x n * n x l : Gives m x l
 # 2 x 3 * 3 x 2 : Gives 2 x 2
 # 2 x 3 * 4 x 2 : Cannot mutliply
 ``` 
@@ -131,7 +131,7 @@ print(matrix.transpose())
 Adjoint of a matrix is calculated as the transpose of cofactor matrix of a Matrix
 It can be calculated using the `adjoint()` method
 
-```pyhton 
+```python
 print(matrix.adjoint())
 # [ -3, 6, -3
 #   6, -12, 6
