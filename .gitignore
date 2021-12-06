@@ -13,3 +13,4 @@ var/
 *.egg
 __pycache__/
 *.py[cod]
+demo.py

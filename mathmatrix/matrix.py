@@ -5,6 +5,7 @@ from . import config
 intOrFloat = Union[int, float]
 nestedList = List[List[intOrFloat]]
 
+
 def cofactor(l: nestedList, m: int, n: int):
     actualn = len(l)
     return [[l[i][j] for j in range(
@@ -147,7 +148,11 @@ def gen_zero_matrix(m: int, n: int) -> Matrix:
     '''
     Generates a zero matrix of order m x n
     '''
-    return Matrix(m, n, [].extend(repeat([].extend(repeat(0, n)), m)), False)
+    outer = []
+    inner = []
+    inner.extend(repeat(0, n))
+    outer.extend(repeat(inner, m))
+    return Matrix(m, n, outer, False)
 
 
 def gen_identity_matrix(m: int, n: int) -> Matrix:
