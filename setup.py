@@ -7,7 +7,7 @@ long_description = (this_directory / "README.md").read_text()
 setup(
     name='mathmatrix',
     packages=['mathmatrix'],
-    version='0.2',
+    version='0.3',
     license='MIT',
     description='A package for Python that lets you create and perform various operations on Matrices sucjh as finding the adjoint, inverse, determinant of a matrix, etc..',
     author='Keerthi Vasan S A',

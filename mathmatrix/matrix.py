@@ -88,6 +88,20 @@ class Matrix:
                 raise ValueError(
                     'Matrix addition is only implemented for matrices with the same order')
             return [[self[i][j] + other[i][j] for j in range(self.n)] for i in range(self.m)]
+        else:
+            raise ValueError('Addition can only be checked between matrices or between a matrix and a nubmer (int or float)')
+
+    def __sub__(self, other):
+        t = type(other)
+        if t == int or t == float:
+            return Matrix(self.m, self.n, [[other-v for v in x] for x in self.__values], False)
+        elif t == Matrix:
+            if self.m != other.m or self.n != other.m:
+                raise ValueError(
+                    'Matrix addition is only implemented for matrices with the same order')
+            return [[self[i][j] - other[i][j] for j in range(self.n)] for i in range(self.m)]
+        else:
+            raise ValueError('Subraction can only be checked between matrices or between a matrix and a nubmer (int or float)')
 
     def __truediv__(self, other):
         t = type(other)
